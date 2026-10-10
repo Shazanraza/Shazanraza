@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+
+  <meta
+    name="description"
+    content="Postly is a simple post management system to create, edit, search, view and delete blog posts."
+  />
+
+  <title>Postly — Post Management System</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Main JavaScript -->
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER / NAVIGATION
+  ========================== -->
+  <header class="topbar">
+
+    <a href="#/" class="brand" aria-label="Postly home">
+      <span class="brand-icon">P</span>
+      <span>
+        Postly<span class="brand-dot">.</span>
+      </span>
+    </a>
+
+    <nav class="top-nav" aria-label="Main navigation">
+
+      <a href="#/" class="nav-link">
+        All Posts
+      </a>
+
+      <a href="#/posts/new" class="button button-primary">
+        <span aria-hidden="true">+</span>
+        Create Post
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN APPLICATION
+       JavaScript renders the
+       list, form and details here.
+  ========================== -->
+  <main class="container">
+
+    <div id="app" aria-live="polite">
+
+      <div class="loading">
+        Loading your posts...
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="footer">
+
+    <p>
+      Postly — Mini Post Management System
+    </p>
+
+    <p>
+      Built with HTML, CSS &amp; JavaScript
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       TOAST NOTIFICATION
+  ========================== -->
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- =========================
+       DELETE CONFIRMATION MODAL
+  ========================== -->
+  <dialog
+    id="deleteDialog"
+    class="delete-dialog"
+    aria-labelledby="deleteDialogTitle"
+    aria-describedby="deleteDialogDescription"
+  >
+
+    <div class="dialog-icon" aria-hidden="true">
+      !
+    </div>
+
+    <h2 id="deleteDialogTitle">
+      Delete this post?
+    </h2>
+
+    <p id="deleteDialogDescription">
+      This action cannot be undone.
+    </p>
+
+    <div class="dialog-actions">
+
+      <button
+        type="button"
+        id="cancelDelete"
+        class="button button-secondary"
+      >
+        Cancel
+      </button>
+
+      <button
+        type="button"
+        id="confirmDelete"
+        class="button button-danger"
+      >
+        Delete Post
+      </button>
+
+    </div>
+
+  </dialog>
+
+</body>
+</html>
